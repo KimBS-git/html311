@@ -1,7 +1,6 @@
 /* 전문적인 동물병원 느낌을 위한 커스텀 스타일 */
 :root {
   --hospital-primary: #007bff; /* 신뢰감 있는 블루 */
-  --hospital-soft: #eef2f7;
 }
 
 body {
@@ -38,7 +37,3 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-.reserve-img-container {
-  overflow: hidden;
-  border-radius: 20px 20px 0 0;
-}
