@@ -9,7 +9,7 @@
 ## 1. 페이지 UI구성
 | Bootstrap 예시 페이지 | 구현한 페이지
 | :---: | :---: |
-| <img src="images/readme/product.png" width="60%"> |  <img src="images/readme/페이지.png" width="100%">
+| <img src="images/readme/product.png" width="100%"> |  <img src="images/readme/페이지.png" width="100%">
 
 
 > 
