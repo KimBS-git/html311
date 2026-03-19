@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,11 +18,14 @@
     <meta name="theme-color" content="#712cf9" />
     <link href="product.css" rel="stylesheet" />
     <style>
+      /* 히어로 섹션 이미지 스타일 
+      배경에 맞추기 위해 사이즈 설정 */
       .kunho-image{
         width: 50%;
         max-height: 500px;
         object-fit: contain;
       }
+      /* >>누르세요<< 호버 시 글자색 변경 */
       .hover:hover{
         color: blue !important;
       }
@@ -99,10 +102,12 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">의료진</a>
-              </li>
+              </li> 
               <li class="nav-item"><a class="nav-link" href="#" onclick="showDonationAlert(); return false">후원안내</a></li>
               <li class="nav-item"><a class="nav-link" href="https://www.royalcanin.com/kr" 
                 target="_blank">펫 용품</a></li>
+                <!-- 후원 안내 클릭 시 함수 showDonationAlert() 실행, return -> 링크의 기본 이동 동작 막음
+                 펫 용품 클릭 시 쇼핑몰 연결 taget 사용해서 새탭으로 열림 -->
             </ul>
           </div>
         </div>
@@ -115,6 +120,7 @@
     <div class="position-absolute bottom-0 mb-4 text-white">
       <h1 class="display-4 fw-bold">Pet Medical Center</h1>
       <p class="lead">강아지와 고양이를 위한 최고의 의료 서비스</p>
+      <!-- position absolute 사용해서 텍스트 겹치게 배치, flexbox로 가로세로 가운데 정렬 -->
     </div>
   </div>
 
@@ -127,10 +133,11 @@
     <div class="row g-4 justify-content-center">
       <div class="col-md-5">
         <div class="reserve-card bg-dark text-white text-center p-0 overflow-hidden"
-        style="cursor: pointer;"
+        style="cursor: pointer;" 
         data-bs-toggle="modal"
         data-bs-target="#reservationModal"
         onclick="setPetType('강아지')">
+        <!-- 마우스 커서 모양 변경, 클릭 시 모달 열기 -->
       <div class="p-4">
             <h2 class="display-6 fw-bold">강아지</h2>
             <p class="text-secondary">DOG CARE</p>
@@ -140,7 +147,7 @@
           </div>
         </div>
       </div>
-      
+      <!-- 어떤 동물 클릭했는지 모달에 이름 전달, 이미지가 가득차게 설정-->
       <div class="col-md-5">
         <div class="reserve-card bg-light text-dark text-center p-0 overflow-hidden"
         style="cursor: pointer;" 
@@ -153,6 +160,7 @@
           </div>
           <div class="reserve-img-container" style="height: 350px;">
             <img src="images/kun1.png" alt="고양이" style="width: 100%; height: 100%; object-fit: contain; background: #e9ecef;">
+            <!-- 이미지 적정 비율 설정 -->
           </div>
         </div>
       </div>
@@ -190,8 +198,8 @@
           <ul class="list-unstyled text-small">
             <li>
               <a class="link-secondary text-decoration-none" href="#"
-                >서울특별시 금천구 가산디지털1로 70<br>9층</a
-              >
+                >서울특별시 금천구 가산디지털1로 70<br>9층</a>
+                <!-- 텍스트 변경(주소) -->
             </li>
           </ul>
         </div>
@@ -200,8 +208,8 @@
           <ul class="list-unstyled text-small">
             <li>
               <a class="link-secondary text-decoration-none" href="#"
-                >09시 ~ 18시(연중무휴)</a
-              >
+                >09시 ~ 18시(연중무휴)</a>
+                <!-- 텍스트 변경(진료시간) -->
             </li>
           </ul>
         </div>
@@ -215,6 +223,7 @@
               <a class="link-secondary text-decoration-none hover" 
               href="https://blog.naver.com/jamsuham75/222345374267" target="_blank"
                 > >>누르세요<< </a>
+                <!-- 텍스트 변경, 외부링크 연결 클릭 시 새 탭으로 열림, 호버 시 색상 변경) -->
           </ul>
         </div>
       </div>
@@ -223,14 +232,17 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
       <div class="modal-header bg-primary text-white" style="border-radius: 20px 20px 0 0;">
+        <!-- 예약 모달 : modal fade -> 애니메이션, modal-dialog-centered -> 화면 중앙에 위치 -->
         <h5 class="modal-title fw-bold" id="reservationModalLabel"><span id="selectedPet">동물</span> 예약하기</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <!-- 선택한 동물 이름으로 자동 변경, 닫기 버튼 -->
       <div class="modal-body p-4">
         <form id="resForm">
           <div class="mb-3">
             <label class="form-label fw-bold">방문 날짜 선택</label>
             <input type="date" class="form-control form-control-lg" id="resDate" required>
+            <!-- 달력ui 선택, required를 써서 필수 입력으로 설정 -->
           </div>
           <div class="mb-3">
             <label class="form-label fw-bold">방문 시간</label>
@@ -247,7 +259,7 @@
           </div>
           <div class="mb-3">
             <label class="form-label fw-bold">보호자 연락처</label>
-            <input type="tel" class="form-control" placeholder="010-0000-0000" required>
+            <input type="tel" id="resPhone" class="form-control" placeholder="010-0000-0000" required>
           </div>
         </form>
       </div>
@@ -255,6 +267,7 @@
         <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">취소</button>
         <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold" onclick="completeRes()">예약 확정</button>
       </div>
+      <!-- 예약확정 버튼 completeRes() 함수 실행 -->
     </div>
   </div>
 </div>
@@ -263,35 +276,37 @@
 <script>
   const today = new Date().toISOString().split('T')[0];
   document.getElementById('resDate').min = today;
-  
+  // 날짜 최솟값 설정해서 오늘 이전 선택불가, 날짜 문자열로 변환해서 날짜만 가져옴
   function setPetType(type) {
     document.getElementById('selectedPet').innerText = type;
   }
-
+// 선택한 동물 이름 모달에 가져오기
   function completeRes() {
     const date = document.getElementById('resDate').value;
     const time = document.getElementById('resTime').value;
-    const phone = document.querySelector('input[type="tel"]').value;
+    const phone = document.getElementById('resPhone').value;
     const pet = document.getElementById('selectedPet').innerText;
-
+// 예약확정되면 입력했던 값들 가져오기
     if(!date) {
       alert('날짜를 선택해주세요');
       return;
-    }
-    const phoneNum = /^(010)-([0-9]{4})-([0-9]{4})$/;
+    }// 날짜 미선택 시 알림창
+
+    const phoneNum = /^(010)-([0-9]{4})-([0-9]{4})$/; // 010으로 시작, 0~9사이 4자리, '-'입력 확인
     if(!phoneNum.test(phone)){
       alert("올바른 연락처를 입력해주세요 (예: 010-0000-0000)");
       return;
-    }
+    }// 연락처 유효성 검사 후 맞지않을 경우 알림창 
 
     alert(`${pet} 진료 예약이 ${date} ${time}에 완료되었습니다!\n연락처 : ${phone}`);
-    // 여기에 실제 데이터 저장 로직을 추가할 수 있습니다.
+    // 예약확정 알림창
     const modal = bootstrap.Modal.getInstance(document.getElementById('reservationModal'));
     modal.hide();
-  }
+  }// 모달 닫기
+
   function showDonationAlert(){
     alert("신한은행 110-137-486743\n예금주 : 김범수")
-  }
+  } // 후원안내 클릭 시 함수 실행하여 계좌 알림창 표시
 </script>
   </body>
 </html>

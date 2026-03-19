@@ -1,6 +1,6 @@
-/* 전문적인 동물병원 느낌을 위한 커스텀 스타일 */
+/* 예약카드 위 색상 */
 :root {
-  --hospital-primary: #007bff; /* 신뢰감 있는 블루 */
+  --hospital-primary: #007bff; 
 }
 
 body {
@@ -8,18 +8,19 @@ body {
   background-color: #ffffff;
 }
 
-/* 메인 비주얼 섹션 */
+/* 히어로 섹션 */
 .product-relative {
   background: linear-gradient(135deg, #000 0%, #222 100%) !important;
   border-radius: 0 0 50px 50px; /* 하단 둥글게 */
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* 히어로 섹션 이미지에 후광 효과*/
 .kunho-image {
   transition: transform 0.3s ease;
   filter: drop-shadow(0 5px 15px rgba(255,255,255,0.1));
 }
-
+/* 히어로 섹션 이미지에 호버 시 확대 효과 */
 .kunho-image:hover {
   transform: scale(1.05);
 }
@@ -31,7 +32,8 @@ body {
   border-radius: 30px !important;
   box-shadow: 0 15px 35px rgba(0,0,0,0.05);
 }
-
+/* 호버 시 카드가 위로 떠오르는 효과 
+떠오를 때 그림자 살짝 짙어짐*/
 .reserve-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);

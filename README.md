@@ -1,4 +1,4 @@
-# 🐾 Pet Medical Center (강아지 / 고양이 전문 동물병원)
+# 🐾 Pet Medical Center (반려동물 의료 센터)
 
 > 부트스트랩(Bootstrap)을 활용하여 제작한 **반려동물 의료 센터**의 간편 예약이 가능한 페이지입니다. 사용자 편의를 고려한 모달(Modal) 기반 예약 기능을 제공합니다.
 
@@ -7,11 +7,13 @@
 ## 🚀 주요 기능
 
 ## 1. 페이지 UI구성
-> Bootstrap 예시 페이지
-![](images/readme/product.png) 
+| Bootstrap 예시 페이지 | 구현한 페이지
+| :---: | :---: |
+| <img src="images/readme/product.png" width="60%"> |  <img src="images/readme/페이지.png" width="100%">
 
-> 커스터마이징 페이지
-![](images/readme/페이지.png)
+
+> 
+
 
 ---
 
